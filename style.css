@@ -7,7 +7,131 @@ html {
 body {
   padding: 0;
   margin: 0;
+  background: #888;
+  display: grid;
+  justify-items: center;
+  min-height: 100vh;
 }
+
 .wrapper {
-    width: 400px;
+  width: 400px;
+  border: 1px solid #999;
+  overflow: hidden;
+}
+
+/* Screen */
+.calculator-screen {
+  background: #000;
+  padding: 16px 20px 20px;
+  min-height: 90px;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: end;
+  justify-items: end;
+}
+
+.screen-expression {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  min-height: 20px;
+  margin-bottom: 4px;
+  font-family: sans-serif;
+}
+
+.screen-display {
+  font-size: 48px;
+  font-weight: 300;
+  color: #fff;
+  font-family: sans-serif;
+  line-height: 1;
+  letter-spacing: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Button grid */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Base button */
+.btn {
+  display: grid;
+  place-items: center;
+  height: 90px;
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: 400;
+  border: none;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  cursor: pointer;
+  transition: filter 0.1s ease, transform 0.08s ease;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Utility classes to control borders cleanly */
+.no-right-border  { border-right: none; }
+.no-bottom-border { border-bottom: none; }
+
+/* Grid span helpers */
+.span2 { grid-column: span 2; }
+.span3 { grid-column: span 3; }
+
+/* Zero button text alignment */
+.zero-align {
+  justify-items: start;
+  padding-left: 36px;
+}
+
+/* Number, back, and clear buttons */
+.btn-number,
+.btn-utility {
+  background: #d4d4d4;
+  color: #111;
+}
+
+.btn-number:hover,
+.btn-utility:hover {
+  filter: brightness(0.92);
+}
+
+.btn-number:active,
+.btn-utility:active {
+  filter: brightness(0.80);
+  transform: scale(0.96);
+}
+
+/* Operator buttons */
+.btn-operator {
+  background: #e8972a;
+  color: #fff;
+  font-size: 26px;
+}
+
+.btn-operator:hover {
+  filter: brightness(1.1);
+}
+
+.btn-operator:active {
+  filter: brightness(0.88);
+  transform: scale(0.96);
+}
+
+/* Change color of elected operator */
+.btn-operator.active-operator {
+  background: #fff;
+  color: #e8972a;
+}
+
+/* Focus ring for keyboard users */
+.btn:focus-visible {
+  outline: 2px solid #e8972a;
+  outline-offset: -3px;
+  z-index: 1;
 }

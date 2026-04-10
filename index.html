@@ -4,22 +4,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Calculator App</title>
-    
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
- 
-  </head>  
+    <title>COMP 584: Calculator App - Quang Tran</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
   <body>
     <div class="wrapper">
-        <section class="calculator-screen">
 
-        </section>
-    
-        <section class="calculator-buttons">
- 
-        </section>
+      <section class="calculator-screen">
+        <div class="screen-expression" id="expression"></div>
+        <div class="screen-display" id="display">0</div>
+      </section>
+
+      <section class="calculator-buttons">
+        <!-- Row 1: C spans 2 columnss, ←, ÷ -->
+        <button class="btn btn-utility span2" data-action="clear">C</button>
+        <button class="btn btn-utility" data-action="backspace">&#8592;</button>
+        <button class="btn btn-operator no-right-border" data-action="operator" data-value="÷">÷</button>
+
+        <!-- Row 2 -->
+        <button class="btn btn-number" data-action="number" data-value="7">7</button>
+        <button class="btn btn-number" data-action="number" data-value="8">8</button>
+        <button class="btn btn-number" data-action="number" data-value="9">9</button>
+        <button class="btn btn-operator no-right-border" data-action="operator" data-value="×">×</button>
+
+        <!-- Row 3 -->
+        <button class="btn btn-number" data-action="number" data-value="4">4</button>
+        <button class="btn btn-number" data-action="number" data-value="5">5</button>
+        <button class="btn btn-number" data-action="number" data-value="6">6</button>
+        <button class="btn btn-operator no-right-border" data-action="operator" data-value="−">−</button>
+
+        <!-- Row 4 -->
+        <button class="btn btn-number" data-action="number" data-value="1">1</button>
+        <button class="btn btn-number" data-action="number" data-value="2">2</button>
+        <button class="btn btn-number" data-action="number" data-value="3">3</button>
+        <button class="btn btn-operator no-right-border" data-action="operator" data-value="+">+</button>
+
+        <!-- Row 5: 0 spans 3 columns, = -->
+        <button class="btn btn-number span3 zero-align" data-action="number" data-value="0">0</button>
+        <button class="btn btn-operator no-right-border no-bottom-border" data-action="equals">=</button>
+      </section>
+
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
